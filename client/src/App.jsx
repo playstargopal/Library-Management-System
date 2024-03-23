@@ -1,25 +1,27 @@
 import { useState } from 'react'
-// import './App.css'
-import Login from './components/auth/Login'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import Home from './components/home/Home'
-import SignupForm from './components/auth/Signup'
-import AddProductForm from './components/product/AddProduct'
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import './App.css'
+import Home from './components/home/Home';
+import Login from './components/auth/Login';
+import SignupForm from './components/auth/Register';
+import Admin from './components/dashboard/Admin';
+import Vendor from './components/dashboard/Vendor';
+import User from './components/dashboard/User';
 
 function App() {
 
-
   return (
-
     <>
       <BrowserRouter>
       <Routes>
-    <Route path='/' element = {<Home/>}/>
-    <Route path = "/admin-login" element = {<Login/>}/>
-    <Route path = "/vendor-login" element = {<Login/>}/>
-    <Route path = "/user-login" element = {<Login/>}/>
-    <Route path = "/auth/register" element = {<SignupForm/>}/>
-    <Route path='/add-product' element = {<AddProductForm/>}/>
+        <Route path='/' element = {<Home/>}/>
+        <Route path='/auth/admin-login' element = {<Login/>}/>
+        <Route path='/auth/vendor-login' element = {<Login/>}/>
+        <Route path='/auth/user-login' element = {<Login/>}/>
+        <Route path='/auth/signup' element = {<SignupForm/>}/>
+        <Route path='/dashboard/admin' element = {<Admin/>}/>
+        <Route path='/dashboard/vendor' element = {<Vendor/>}/>
+        <Route path='/dashboard/user' element = {<User/>}/>
       </Routes>
       </BrowserRouter>
     </>

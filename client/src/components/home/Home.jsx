@@ -1,16 +1,19 @@
-import React from "react"; 
-import { useNavigate } from "react-router-dom";
-export default function Home(){
-    const navigate = useNavigate();
+import React from 'react';
+import './home.css';
+import { Link } from 'react-router-dom';
 
-    return(
-        <>
-        <h1>Welcome to application</h1>
-        <ul>How Do you wish to continue?</ul>
-        <li onClick={()=>{navigate("/admin-login")}}>Continue as Admin</li>
-        <li onClick={()=>{navigate("/vendor-login")}}>Continue as Vendor</li>
-        <li onClick={()=>{navigate("/user-login")}}>Continue as User</li>
-        
-        </>
-    )
-}
+const Home = () => {
+  return (
+    <div className="home-container">
+      <h1 className="welcome-message">Welcome to our application!</h1>
+      <h2>Gopu Library Management System</h2>
+      <div className="options-container">
+        <button className="option-button"><Link to="/auth/admin-login">Continue as Admin</Link></button>
+        <button className="option-button"><Link to="/auth/vendor-login">Continue as Vendor</Link></button>
+        <button className="option-button"><Link to="/auth/user-login">Continue as User</Link></button>
+      </div>
+    </div>
+  );
+};
+
+export default Home;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './productForm.css'; // Importing external CSS file for styling
+import './addProduct.css'; // Importing external CSS file for styling
 
 function AddProductForm() {
   const [productData, setProductData] = useState({
